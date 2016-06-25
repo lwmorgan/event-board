@@ -22,7 +22,7 @@ Server
                     port = address.port;
 
                   Server
-                    .msg('showcase running on http://' + host + ':' + port);
+                    .msg('event-board running on http://' + host + ':' + port);
 
                 });
 

@@ -1,5 +1,5 @@
 {
-  "name": "showcase",
+  "name": "event-board",
   "version": "1.0.0",
   "description": "Oranization event board",
   "main": "app.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lwmorgan/showcase.git"
+    "url": "git+https://github.com/lwmorgan/event-board.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lwmorgan/showcase/issues"
+    "url": "https://github.com/lwmorgan/event-board/issues"
   },
-  "homepage": "https://github.com/lwmorgan/showcase#readme",
+  "homepage": "https://github.com/lwmorgan/event-board#readme",
   "dependencies": {
     "async": "^2.0.0-rc.6",
     "chalk": "^1.1.3",
