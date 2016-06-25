@@ -1,2 +1,2 @@
-# showcase
+# event-board
 Organization event board.

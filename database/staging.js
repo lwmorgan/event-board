@@ -2,13 +2,13 @@
 // Connect to our mongodb server/database
 var conn = new Mongo("localhost"),
 
-  db = conn.getDB("showcase");
+  db = conn.getDB("event-board");
 
 // Drop the database
 db.dropDatabase();
 
 // Create the database
-db = db.getSiblingDB('showcase');
+db = db.getSiblingDB('event-board');
 
 // Create and Load the Groups collection
 db.groups.insert({

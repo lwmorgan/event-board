@@ -14,7 +14,7 @@ var express = require('express'),
 
     msg: function(msg) {
 
-      console.log(chalk.bgWhite(chalk.red('## ') + chalk.black('showcase') + chalk.red(' ## ') + chalk.black(msg)));
+      console.log(chalk.bgWhite(chalk.red('## ') + chalk.black('event-board') + chalk.red(' ## ') + chalk.black(msg)));
 
       return this;
 
@@ -117,7 +117,7 @@ var express = require('express'),
         });
 
       app.get('/', function (req, res) {
-        res.send('Hello showcase World!');
+        res.send('Hello event-board World!');
       });
 
       return deferred.promise;
