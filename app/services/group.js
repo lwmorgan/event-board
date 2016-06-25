@@ -23,6 +23,26 @@ module.exports = {
 
     return deferred.promise;
 
+  },
+
+  findByName: function (name) {
+
+    var deferred = q.defer();
+
+    Group.findOne({ name: name }, function(err, group) {
+
+      if (err) {
+
+        throw err;
+
+      }
+
+      deferred.resolve(group);
+
+    });
+
+    return deferred.promise;
+
   }
 
 };

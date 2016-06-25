@@ -27,6 +27,32 @@ module.exports = {
 
     });
 
+  },
+
+  findByName: function (req, res) {
+
+    var name = req.params.name || '';
+
+    Group.findByName(name).then(function (group) {
+
+      if(group) {
+
+        return res.json(group);
+
+      } else {
+
+        return res
+          .status(404)
+          .json({
+
+            'msg': 'An error occured when attempting to find the specified group.'
+
+          });
+
+      }
+
+    });
+
   }
 
 };

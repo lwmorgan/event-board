@@ -12,7 +12,8 @@ db = db.getSiblingDB('event-board');
 
 // Create and Load the Groups collection
 db.groups.insert({
-  name: "GoWags Titans",
+  name: "titans",
+  displayName: "GoWags Titans",
   banner: "We will have tryouts this coming up August the 4th. Contact coach for details.",
   adminPword: "admin",
   // logos: [],
