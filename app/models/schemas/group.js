@@ -5,6 +5,8 @@ var mongoose = require('mongoose'),
 
   name: String,
 
+  displayName: String,
+
   banner: String,
 
   adminPword: String,
