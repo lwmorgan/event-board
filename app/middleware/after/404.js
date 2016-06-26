@@ -12,6 +12,6 @@ app.use(function (req, res) {
 
       'error': true
 
-    })
+    });
 
 });
