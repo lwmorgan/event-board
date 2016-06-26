@@ -54,18 +54,43 @@ module.exports = function(grunt) {
 
       all: ['Gruntfile.js', 'app/**/*.js', 'public/**/*.js']
 
+    },
+
+    compass: {
+
+        dist: {
+
+            options: {
+
+                sassDir: 'public/styles',
+
+                specify: 'public/styles/app.scss',
+
+                cssDir: 'www/styles',
+
+                // environment: 'development',
+
+                outputStyle: 'compressed'
+
+            }
+
+        }
+
     }
 
   });
 
   grunt.loadNpmTasks('grunt-contrib-pug');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-compass');
 
   grunt.registerTask('default', [
 
     'jshint',
 
-    'pug'
+    'pug',
+
+    'compass'
 
   ]);
 
