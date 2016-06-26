@@ -1,4 +1,6 @@
 
+# Public build directory
+www
 
 npm-debug.log*
 
