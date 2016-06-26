@@ -24,7 +24,13 @@
     "express-winston": "^1.4.1",
     "globby": "^5.0.0",
     "mongoose": "^4.5.2",
+    "pug": "^2.0.0-beta3",
     "q": "^1.4.1",
     "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-pug": "^1.0.0"
   }
 }
