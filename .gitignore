@@ -2,6 +2,9 @@
 # Public build directory
 www
 
+# Sass cache directory
+.sass-cache
+
 npm-debug.log*
 
 # Runtime data
