@@ -56,6 +56,16 @@ module.exports = function(grunt) {
 
     },
 
+    clean: {
+
+      all: [
+
+        'www'
+
+      ]
+
+    },
+
     compass: {
 
         dist: {
@@ -82,11 +92,14 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-pug');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
 
   grunt.registerTask('default', [
 
     'jshint',
+
+    'clean:all',
 
     'pug',
 
