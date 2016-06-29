@@ -48,7 +48,13 @@ module.exports = function(grunt) {
 
       options: {
 
-        node: true
+        node: true,
+
+        globals:{
+
+            angular: true
+
+        }
 
       },
 
@@ -59,8 +65,10 @@ module.exports = function(grunt) {
     clean: {
 
       all: [
+        
+        'www/**/*',
 
-        'www'
+        '!www/bower_components/**'
 
       ]
 
@@ -86,6 +94,18 @@ module.exports = function(grunt) {
 
         }
 
+    },
+
+    wiredep: {
+
+      task: {
+
+        directory: 'www/bower_components',
+
+        src: ['www/index.html']
+
+      }
+
     }
 
   });
@@ -94,6 +114,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-wiredep');
 
   grunt.registerTask('default', [
 
@@ -103,7 +124,9 @@ module.exports = function(grunt) {
 
     'pug',
 
-    'compass'
+    'compass',
+
+    'wiredep'
 
   ]);
 
