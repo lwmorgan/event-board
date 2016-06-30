@@ -1,33 +1,31 @@
-html(ng-app="")
+html(ng-app="plunker")
   head
   <!-- bower:css -->
   <!-- endbower -->
-  body
+  body(ng-controller='AppCtrl')
     <!-- bower:js -->
     <!-- endbower -->
-    nav.navbar.navbar-default.navbar-fixed-top
-      .container-fluid
-        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+    script(src="scripts/app.module.js")
+    nav.navbar.navbar-default(role='navigation')
+      .navbar-header
+        button.navbar-toggle(type='button', ng-init='navCollapsed = true', ng-click='navCollapsed = !navCollapsed')
           span.sr-only Toggle navigation
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        a.navbar-brand(href='#') Project name
-        .navbar-collapse.collapse
-          ul.nav.navbar-nav
-            li.active
-              a(href='#') Home
-            li
-              a(href='#') Contacts
-            li
-              a(href='#') About
-            li.dropdown
-              a.dropdown-toggle(href='#', data-toggle='dropdown')
-                | Learn
-                b.caret
-              ul.dropdown-menu
-                li.dropdown-header Examples
-                li
-                  a(href='#') C++
-                li
-                  a(href='#') Java
+        a.navbar-brand(href='#') Test POC
+      .collapse.navbar-collapse(uib-collapse='navCollapsed')
+        ul.nav.navbar-nav
+          li.active
+            a(href='#') {{activeSeason ? activeSeason.name : ''}}
+          li.dropdown(uib-dropdown='')
+            a.dropdown-toggle(href='#', uib-dropdown-toggle='', data-toggle='dropdown')
+              | Seasons
+              b.caret
+            ul.dropdown-menu(role='menu')
+              li(ng-repeat="i in items")
+                a(href='#') {{i}}
+          li
+            a(href='#') About
+    p Hello {{name}}
+    p navCollapsed={{navCollapsed}}
