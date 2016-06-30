@@ -155,6 +155,23 @@ var express = require('express'),
 
     },
 
+    configure: function () {
+
+      // Plug in the JSON pretty formatting post chain middleware
+      app.use(require('body-parser').json());
+
+      // Cross origin resource sharing handling
+      app.use(require('cors')());
+
+      // Configure the JSON pretty formatting post chain middleware
+      app.set('json spaces', 0);
+
+      this.msg('Express - Configuration completed.');
+
+      return this;
+
+    },
+
     start: function () {
 
       var self = this,
