@@ -65,7 +65,7 @@ module.exports = function(grunt) {
     clean: {
 
       all: [
-        
+
         'www/**/*',
 
         '!www/bower_components/**'
@@ -96,6 +96,30 @@ module.exports = function(grunt) {
 
     },
 
+    copy: {
+
+      main: {
+
+        files: [
+
+          {
+
+            expand: true,
+
+            cwd: 'public/scripts/',
+
+            src: ['**'],
+
+            dest: 'www/scripts/'
+
+          },
+
+        ],
+
+      },
+
+    },
+
     wiredep: {
 
       task: {
@@ -114,19 +138,22 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-wiredep');
 
   grunt.registerTask('default', [
 
     'jshint',
 
-    'clean:all',
+    'clean',
 
     'pug',
 
     'compass',
 
-    'wiredep'
+    'wiredep',
+
+    'copy'
 
   ]);
 
