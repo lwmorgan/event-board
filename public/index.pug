@@ -1,31 +1,6 @@
-html(ng-app="plunker")
-  head
-  <!-- bower:css -->
-  <!-- endbower -->
-  body(ng-controller='AppCtrl')
-    <!-- bower:js -->
-    <!-- endbower -->
-    script(src="scripts/app.module.js")
-    nav.navbar.navbar-default(role='navigation')
-      .navbar-header
-        button.navbar-toggle(type='button', ng-init='navCollapsed = true', ng-click='navCollapsed = !navCollapsed')
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        a.navbar-brand(href='#') Test POC
-      .collapse.navbar-collapse(uib-collapse='navCollapsed')
-        ul.nav.navbar-nav
-          li.active
-            a(href='#') {{activeSeason ? activeSeason.name : ''}}
-          li.dropdown(uib-dropdown='')
-            a.dropdown-toggle(href='#', uib-dropdown-toggle='', data-toggle='dropdown')
-              | Seasons
-              b.caret
-            ul.dropdown-menu(role='menu')
-              li(ng-repeat="i in items")
-                a(href='#') {{i}}
-          li
-            a(href='#') About
-    p Hello {{name}}
-    p navCollapsed={{navCollapsed}}
+doctype html
+html(ng-app="eb")
+  include views/includes/head
+  body
+    include views/includes/scripts
+    div(ui-view="")
