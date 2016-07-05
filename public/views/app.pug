@@ -15,8 +15,8 @@ nav.navbar.navbar-default(role='navigation')
           | Seasons
           b.caret
         ul.dropdown-menu(role='menu')
-          li(ng-repeat="i in items")
-            a(href='#') {{i}}
+          li(ng-repeat='i in items')
+            a(href='#', ui-sref='app.season({season: i})') {{i}}
       li(ui-sref-active='active')
         a(href='#', ui-sref='app.about') About
 p Hello {{name}}
