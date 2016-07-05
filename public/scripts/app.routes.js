@@ -25,6 +25,14 @@ angular.module('eb')
 
         })
 
+        .state('app.season', {
+
+            'url': '/season/:season',
+
+            'templateUrl': 'views/pages/season/index.html'
+
+        })
+
         .state('app.about', {
 
             url: '/about',
