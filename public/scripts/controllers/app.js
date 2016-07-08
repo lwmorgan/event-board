@@ -18,6 +18,14 @@ angular.module('eb')
           "but wait! A third!"
       ];
 
+      $scope.items = [
+        { name: 'Fall', year: '2016' },
+        { name: 'Spring', year: '2016' },
+        { name: 'Fall', year: '2015' },
+        { name: 'Summer', year: '2015' }
+      ];
+
+
       // $scope.isActive = function (stateName) {
       //
       //   return $state.includes(stateName);

@@ -27,9 +27,15 @@ angular.module('eb')
 
         .state('app.season', {
 
-            'url': '/season/:season',
+            'url': '/events/:year/:name',
 
-            'templateUrl': 'views/pages/season/index.html'
+            'templateUrl': 'views/pages/season/index.html',
+
+            controller: function ($scope, $stateParams) {
+
+              $scope.season = { year: $stateParams.year,  name: $stateParams.name };
+
+            }
 
         })
 
