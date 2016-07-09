@@ -19,7 +19,8 @@ db.groups.insert({
   // logos: [],
   // activeLogo: {},
   seasons: [ {
-    name: "2015 Fall 11U",
+    year: "2015",
+    name: "Fall 11U",
     active: false,
     banner: "Inaugural season ended with championship!",
     events: [ {
@@ -60,7 +61,8 @@ db.groups.insert({
     ]
   },
   {
-    name: "2016 Spring 11U",
+    year: "2016",
+    name: "Spring 11U",
     active: true,
     banner: "First spring season! Lets have a great year.",
     events: [ {

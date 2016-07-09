@@ -27,13 +27,34 @@ angular.module('eb')
 
         .state('app.season', {
 
-            'url': '/events/:year/:name',
+            'url': '/season/:year/:name',
 
             'templateUrl': 'views/pages/season/index.html',
 
-            controller: function ($scope, $stateParams) {
+            'controllerAs': 'seasonController',
 
-              $scope.season = { year: $stateParams.year,  name: $stateParams.name };
+            'controller': 'SeasonCtrl',
+
+            'resolve': {
+
+              'season': [
+                '$stateParams',
+                'Season',
+                function ($stateParams, Season) {
+
+                  console.log('IN RESOLVE!');
+
+                  return Season.find($stateParams.year, $stateParams.name).then(function (result) {
+
+                    console.log('IN RESOLVE CALLBACK!', result);
+
+                    return result;
+
+                  });
+
+                }
+
+              ]
 
             }
 

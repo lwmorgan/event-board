@@ -25,6 +25,7 @@
     "express": "^4.14.0",
     "express-winston": "^1.4.1",
     "globby": "^5.0.0",
+    "lodash": "^4.13.1",
     "mongoose": "^4.5.2",
     "pug": "^2.0.0-beta3",
     "q": "^1.4.1",

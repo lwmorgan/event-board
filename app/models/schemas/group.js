@@ -13,6 +13,8 @@ var mongoose = require('mongoose'),
 
   seasons : [ {
 
+        year: String,
+
         name: String,
 
         active: Boolean,
