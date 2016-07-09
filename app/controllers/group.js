@@ -29,6 +29,30 @@ module.exports = {
 
   },
 
+  test: function (req, res) {
+
+    Group.test().then(function (groups) {
+
+      if(groups) {
+
+        return res.json(groups);
+
+      } else {
+
+        return res
+          .status(404)
+          .json({
+
+            'msg': 'An error occured when attempting to find the groups.'
+
+          });
+
+      }
+
+    });
+
+  },
+
   findByName: function (req, res) {
 
     var name = req.params.name || '';

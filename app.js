@@ -1,9 +1,9 @@
 var Server = require('./server');
 
 Server
-  // .database().then(function () {
-  //
-  //   Server
+  .database().then(function () {
+
+    Server
       // .configure()
       .beforeMiddleware().then(function () {
 
@@ -31,6 +31,6 @@ Server
 
         });
 
-      // });
+      });
 
   });

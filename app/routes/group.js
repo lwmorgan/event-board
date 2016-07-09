@@ -16,8 +16,14 @@ router
     .get(controller.find);
 
 router
+  .route('/test')
+    .get(controller.test);
+
+router
   .route('/:name')
     .get(controller.findByName);
+
+
 
 
 app.use('/group', router);

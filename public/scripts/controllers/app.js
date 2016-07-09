@@ -8,28 +8,15 @@ angular.module('eb')
 
       $scope.activeSeason = {
 
-        name: '2016 Spring'
+        name: '2016 Spring 11U'
 
       };
 
       $scope.items = [
-          "The first choice!",
-          "And another choice for you.",
-          "but wait! A third!"
+        // { name: 'Fall', year: '2016' },
+        { name: 'Spring 11U', year: '2016' },
+        { name: 'Fall 11U', year: '2015' }
+        //, { name: 'Summer', year: '2015' }
       ];
-
-      $scope.items = [
-        { name: 'Fall', year: '2016' },
-        { name: 'Spring', year: '2016' },
-        { name: 'Fall', year: '2015' },
-        { name: 'Summer', year: '2015' }
-      ];
-
-
-      // $scope.isActive = function (stateName) {
-      //
-      //   return $state.includes(stateName);
-      //
-      // };
 
   }]);
