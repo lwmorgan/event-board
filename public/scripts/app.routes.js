@@ -13,7 +13,53 @@ angular.module('eb')
 
             'templateUrl': 'views/app.html',
 
-            'controller': 'AppCtrl'
+            'controllerAs': 'appController',
+
+            'controller': 'AppCtrl',
+
+            'resolve': {
+
+              'group': [
+                '$stateParams',
+                'Group',
+                function ($stateParams, Group) {
+
+                  var getActiveSeason = function (seasons) {
+
+                    var activeSeason;
+
+                    angular.forEach(seasons, function (season) {
+
+                      if(!activeSeason) {
+
+                        activeSeason = season.active ? { year: season.year, name: season.name } : undefined;
+
+                      }
+
+                    });
+
+                    return activeSeason;
+
+                  };
+
+                  // HACK: This needs to be configured somewhere, or pulled out of URL eventually?
+                  var groupName = 'titans';
+
+                  return Group.findByName(groupName).then(function (result) {
+
+                    var group = result;
+
+                    group.activeSeason = getActiveSeason(group.seasons);
+
+                    return group;
+
+                  });
+
+                }
+
+              ]
+
+            }
 
         })
 
@@ -42,11 +88,7 @@ angular.module('eb')
                 'Season',
                 function ($stateParams, Season) {
 
-                  console.log('IN RESOLVE!');
-
                   return Season.find($stateParams.year, $stateParams.name).then(function (result) {
-
-                    console.log('IN RESOLVE CALLBACK!', result);
 
                     return result;
 

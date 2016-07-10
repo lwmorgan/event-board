@@ -9,17 +9,15 @@ nav.navbar.navbar-default(role='navigation')
   .collapse.navbar-collapse(uib-collapse='navCollapsed')
     ul.nav.navbar-nav
       li(ui-sref-active='active')
-        a(href='#', ui-sref='app.home') {{activeSeason ? activeSeason.name : ''}}
+        a(href='#', ui-sref='app.home') {{group.activeSeason ? group.activeSeason.year + ' ' + group.activeSeason.name : ''}}
       li.dropdown(uib-dropdown='', ui-sref-active='active')
         a.dropdown-toggle(href='#', uib-dropdown-toggle='', data-toggle='dropdown')
           | Seasons
           b.caret
         ul.dropdown-menu(role='menu')
-          li(ng-repeat='i in items')
-            a(href='#', ui-sref='app.season({ year: i.year, name: i.name })') {{i.year + ' ' +  i.name}}
+          li(ng-repeat='s in group.seasons')
+            a(href='#', ui-sref='app.season({ year: s.year, name: s.name })') {{s.year + ' ' +  s.name}}
       li(ui-sref-active='active')
         a(href='#', ui-sref='app.about') About
-p Hello {{name}}
-p navCollapsed={{navCollapsed}}
 
 div(ui-view="")

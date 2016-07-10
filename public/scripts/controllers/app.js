@@ -2,21 +2,12 @@
 
 angular.module('eb')
 
-  .controller('AppCtrl', ['$scope', function ($scope) {
+  .controller('AppCtrl', ['$scope', 'group', function ($scope, group) {
 
-      $scope.name = 'World';
+      angular.extend($scope, {
 
-      $scope.activeSeason = {
+        'group': group
 
-        name: '2016 Spring 11U'
-
-      };
-
-      $scope.items = [
-        // { name: 'Fall', year: '2016' },
-        { name: 'Spring 11U', year: '2016' },
-        { name: 'Fall 11U', year: '2015' }
-        //, { name: 'Summer', year: '2015' }
-      ];
+      });
 
   }]);

@@ -8,26 +8,24 @@ angular.module('eb')
 
     return {
 
-    find: function (year, name) {
+      find: function (year, name) {
 
-      var deferred = $q.defer();
+        var deferred = $q.defer();
 
-      console.log('In Service about to make API call.');
+        $http
+          .get('http://localhost:8010/season/' + year + '/' + name)
+          .success(function (data) {
 
-      $http
-        .get('http://localhost:8010/season/' + year + '/' + name)
-        .success(function (data) {
+            return deferred.resolve(data);
 
-          console.log('In Service in callback from API call.', data);
+        });
 
-          return deferred.resolve(data);
+        return deferred.promise;
 
-      });
+      }
 
-      return deferred.promise;
+    };
 
-    }
+  }
 
-  };
-
-}]);
+]);
