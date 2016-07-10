@@ -1,2 +1,3 @@
-div This is the season detail view for {{season.year}} {{season.name}}.
-div There are a total of {{season.events.length}} events.
+.season-container
+  h4 {{season.year}} {{season.name}}
+    small {{season.events.length}} event{{(season.events.length > 1) ? 's' : ''}}

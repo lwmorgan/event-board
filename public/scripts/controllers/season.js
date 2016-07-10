@@ -7,9 +7,11 @@ angular.module('eb')
     'season',
     function ($scope, season) {
 
-      console.log('IN Contoller!', season);
+      angular.extend($scope, {
 
-      $scope.season = season;
+        'season': season
+
+      });
 
   }]
 
