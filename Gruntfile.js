@@ -22,7 +22,9 @@ module.exports = function(grunt) {
 
                 client: false,
 
-                pretty: true
+                pretty: true,
+
+                basedir: 'public/views/'
 
             },
 

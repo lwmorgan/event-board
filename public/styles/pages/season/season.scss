@@ -1,13 +1,31 @@
 
 .season-container {
 
-  h4 {
+  h3 {
 
     margin-left: 30px;
 
     small {
 
       margin-left: 20px;
+
+    }
+
+  }
+
+  .tab-pane {
+
+    margin-top: 40px;
+
+  }
+
+  ul.nav-pills {
+
+    margin-top: -40px;
+
+    li {
+
+      float: right;
 
     }
 

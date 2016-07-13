@@ -1,0 +1,8 @@
+.panel.panel-default.collapsible-panel
+  .panel-heading
+    span
+      a(ng-click="isCollapsed = !isCollapsed")
+        span.glyphicon(ng-class="isCollapsed ? 'glyphicon-chevron-down' : 'glyphicon-chevron-up'")
+      span.panel-custom-header(ng-transclude="header")
+  .panel-body(uib-collapse="isCollapsed")
+    div(ng-transclude="content")
