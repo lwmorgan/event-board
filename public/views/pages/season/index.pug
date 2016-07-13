@@ -1,3 +1,4 @@
-.season-container
-  h4 {{season.year}} {{season.name}}
+.season-container.container-fluid
+  h3 {{season.year}} {{season.name}}
     small {{season.events.length}} event{{(season.events.length > 1) ? 's' : ''}}
+  include /includes/pages/season/tabset

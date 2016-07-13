@@ -110,6 +110,21 @@ angular.module('eb')
 
         });
 
+      // EXAMPLE OF HOW I WOULD PASS OBJECT GRAPH TO CHILD UI ROUTER STATES (w/out subsequent API calls)!
+      // $rootScope.$on('$stateChangeStart', function (ev, toState, toParams, fromState, fromParams) {
+      //
+      //   // toState.year
+      //   // toState.name
+      //   if(toState.name === 'app.season') {
+      //
+      //     Season.activeSeason = activeSeasons[asdklsak];
+      //
+      //   }
+      //
+      //   $scope.season = Season.getActiveSeason();
+      //
+      // });
+
       $urlRouterProvider.otherwise('/');
 
   }]);

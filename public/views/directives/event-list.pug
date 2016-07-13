@@ -1,0 +1,8 @@
+ul.event-list.list-unstyled
+  li(ng-repeat="event in events")
+    collapsible-panel
+      panel-header
+        span.heading-title {{event.title}}
+        span.label.label-default {{ event.start | date }} - {{ event.end | date }}
+        span.right-caption {{event.location}}
+      panel-content {{event.location}}
