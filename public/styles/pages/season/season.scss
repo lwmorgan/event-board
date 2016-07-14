@@ -31,4 +31,85 @@
 
   }
 
+
+  .roster-list {
+
+    .panel {
+
+      .panel-custom-header {
+
+        span.heading-title {
+
+          font-weight: bold;
+
+          font-size: 20px;
+
+        }
+
+        span.label {
+
+          float: right;
+
+          margin-right: 5px;
+
+          vertical-align: text-top;
+
+        }
+
+        span.heading-caption {
+
+          font-size: 10px;
+
+        }
+
+      }
+
+      .member-nail {
+
+        width: 100px;
+
+        height: 100px;
+
+        background-color: blue;
+
+        border-radius: 4px;
+
+        display: inline-block;
+
+      }
+
+      span.member-caption {
+
+        float: right;
+
+        margin-top: -20px;
+
+        font-size: 10px;
+
+      }
+
+      .heading-title {
+
+        font-weight: bold;
+
+        font-size: 18px;
+
+      }
+
+      .panel-body {
+
+        text-align: center;
+
+      }
+
+    }
+
+  }
+
+
+
+
+
+
+
 }
