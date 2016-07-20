@@ -1,9 +1,18 @@
 .row.event-list
   .col-md-4(ng-repeat="event in events")
-    collapsible-panel
-      panel-header
-        span.heading-title {{event.title}}
-        span.label.label-default {{ event.start | date }} - {{ event.end | date }}
-        br
-        span.heading-caption {{event.location}}
-      panel-content {{event.location}}
+    //- collapsible-panel
+    //-   panel-header
+    //-     span.heading-title {{event.title}}
+    //-     span.label.label-default {{ event.start | date }} - {{ event.end | date }}
+    //-     br
+    //-     span.heading-caption {{event.location}}
+    //-   panel-content {{event.location}}
+    .panel.panel-default.event-panel
+      .panel-heading
+        span.panel-custom-header
+          span.heading-title {{event.title}}
+          span.label.label-default {{ event.start | date:'MMM d' }} - {{ event.end | date:'MMM d, yyyy' }}
+          br
+          span.heading-caption {{event.location}}
+      .panel-body
+        .event-nail
