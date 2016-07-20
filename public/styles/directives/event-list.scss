@@ -1,6 +1,28 @@
 .event-list {
 
-  .panel.collapsible-panel {
+  .panel.event-panel {
+
+    .panel-body {
+
+      text-align: center;
+
+    }
+
+    .event-nail {
+
+      width: 300px;
+
+      height: 240px;
+
+      margin: 10px;
+
+      background: green;
+
+      display: inline-block;
+
+      border-radius: 4px;
+
+    }
 
     .panel-custom-header {
 
@@ -15,8 +37,6 @@
       span.label {
 
         float: right;
-
-        margin-right: 30px;
 
         vertical-align: text-top;
 
