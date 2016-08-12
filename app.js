@@ -4,7 +4,7 @@ Server
   .database().then(function () {
 
     Server
-      // .configure()
+      .configure()
       .beforeMiddleware().then(function () {
 
         Server

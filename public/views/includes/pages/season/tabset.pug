@@ -1,18 +1,7 @@
 uib-tabset(type="pills", active="1")
   uib-tab(heading="Roster")
-
     .row.roster-list
       .col-md-3(ng-repeat="member in season.members")
-        .panel.panel-default
-          .panel-heading
-            span.panel-custom-header
-              .member-nail
-              span.label.label-default(ng-repeat="pos in member.position.split(',')") {{ pos }}
-              br
-              span.member-caption {{member.school}}
-          .panel-body
-            span.heading-title {{member.lastName}}, {{member.firstName}}
-
-
+        member-nail(member="member")
   uib-tab(heading="Events")
     event-list(events="season.events")

@@ -15,4 +15,4 @@
           br
           span.heading-caption {{event.location}}
       .panel-body
-        .event-nail
+        event-nail(src="{{ (event.moments && event.moments.length > 0) ? ('http://localhost:8010/image/' + event.moments[0].imageId) : ('http://localhost:8010/images/default_member.png') }}", caption="{{ event.moments.length > 0 ? event.moments[0].comment : '' }}")

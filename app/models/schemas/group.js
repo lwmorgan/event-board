@@ -37,7 +37,19 @@ var mongoose = require('mongoose'),
 
           // activeImage: {},
 
-          result: String
+          result: String,
+
+          moments: [{
+
+            _id: mongoose.Schema.Types.ObjectId,
+
+            imageId: mongoose.Schema.Types.ObjectId,
+
+            name: String,
+
+            comment: String
+
+          }]
 
         }],
 
@@ -49,7 +61,9 @@ var mongoose = require('mongoose'),
 
           school: String,
 
-          position: String
+          position: String,
+
+          imageId: mongoose.Schema.Types.ObjectId
 
       }]
 
