@@ -1,0 +1,10 @@
+.panel.panel-default
+  .panel-heading
+    span.panel-custom-header
+      .member-nail
+        img(src="{{ (member.imageId) ? ('http://localhost:8010/image/' + member.imageId) : ('http://localhost:8010/images/default_member.png') }}")
+      span.label.label-default(ng-repeat="pos in member.position.split(',')") {{ pos }}
+      br
+      span.member-caption {{member.school}}
+  .panel-body
+    span.heading-title {{member.lastName}}, {{member.firstName}}

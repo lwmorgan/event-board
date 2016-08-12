@@ -31,7 +31,8 @@ db.groups.insert({
         comments: "First tournament for Titans!",
         // images: [],
         // activeImage: {},
-        result: "quarterfinals"
+        result: "quarterfinals",
+        moments: []
       },
       {
           start: "2015-09-17",
@@ -41,7 +42,8 @@ db.groups.insert({
           comments: "Titans Champs for first time!",
           // images: [],
           // activeImage: {},
-          result: "champs"
+          result: "champs",
+          moments: []
         },
         {
           start: "2015-09-30",
@@ -51,7 +53,8 @@ db.groups.insert({
           comments: "Fictitious...",
           // images: [],
           // activeImage: {},
-          result: "semifinals"
+          result: "semifinals",
+          moments: []
         }
     ],
     members: [
@@ -73,7 +76,8 @@ db.groups.insert({
         comments: "A long night...",
         // images: [],
         // activeImage: {},
-        result: "finals"
+        result: "finals",
+        moments: []
       }
     ],
     members: [

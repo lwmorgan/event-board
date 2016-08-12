@@ -1,0 +1,50 @@
+LOAD MOMENT: --------------------------------------------------------------------------
+
+
+1) Drop image in 'temp-img-load' directory
+
+2) POST to Moment API describing moment (season, event, comment, name, etc..):
+
+
+http://localhost:8010/season/2015/Fall%2011U/Winter%20Classic/moment
+
+{
+    "name": "2016SpringNoOffseasonResult",
+    "imageName": "Titans_2016_NoOffseason.jpg",
+    "comment": "First Spring Event!"
+}
+
+
+The returned JSON object will contain the 'imageId' which can be used to retrive the loaded image.
+
+
+{
+  "imageId": "579640fc54c32ed80d864959",
+  "name": "2016SpringNoOffseasonResult",
+  "comment": "First Spring Event!"
+}
+
+
+
+
+3) Hit Image API describing image (imageId):
+
+http://localhost:8010/image/579640fc54c32ed80d864959
+
+
+
+LOAD PLAYER IMAGE: ----------------------------------------------------------------
+
+1) Drop image in 'temp-img-load' directory
+
+2) PUT to Member API describing member (season, event, lastName, firstName, etc..):
+
+http://localhost:8010/season/2015/Fall%2011U/member/
+
+{
+    "firstName": "Adam",
+    "lastName": "Jones",
+    "school": "Bermudian Springs",
+    "position": "CF, SS",
+    "imageName": "Titans_Connor.jpg"
+}

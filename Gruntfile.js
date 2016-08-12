@@ -114,11 +114,32 @@ module.exports = function(grunt) {
 
             dest: 'www/scripts/'
 
-          },
+          }
 
-        ],
+        ]
 
       },
+
+      images: {
+
+        files: [
+
+          {
+
+            expand: true,
+
+            cwd: 'public/images/',
+
+            src: ['**'],
+
+            dest: 'www/images/'
+
+          }
+
+        ]
+
+      }
+
 
     },
 
@@ -155,7 +176,9 @@ module.exports = function(grunt) {
 
     'wiredep',
 
-    'copy'
+    'copy:images',
+
+    'copy:main'
 
   ]);
 

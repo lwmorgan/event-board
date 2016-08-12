@@ -1,7 +1,6 @@
 
-var Q = require('q'),
+var season = require('../services/season');
 
-  Season = require('../services/season');
 
 module.exports = {
 
@@ -11,25 +10,54 @@ module.exports = {
 
       name = req.params.name || '';
 
-    Season.find(year, name).then(function (groups) {
-
-      if(groups) {
-
-        return res.json(groups);
-
-      } else {
+    season.find(year, name)
+      .then(function (groups) {
 
         return res
-          .status(404)
-          .json({
-
-            'msg': 'An error occured when attempting to find the groups.'
-
-          });
-
-      }
+          .status(groups ? 200 : 404)
+          .json(groups);
 
     });
+
+  },
+
+  addMoment: function (req, res) {
+
+    var year = req.params.year || '',
+
+      seasonName = req.params.name || '',
+
+      eventName = req.params.event || '',
+
+      moment = req.body;
+
+    season.addMoment(year, seasonName, eventName, moment)
+      .then(function (file) {
+
+        return res
+          .status(file ? 200 : 404)
+          .json(file);
+
+    });
+
+  },
+
+  updateMember: function (req, res) {
+
+    var year = req.params.year || '',
+
+      seasonName = req.params.name || '',
+
+      member = req.body;
+
+    season.updateMember(year, seasonName, member)
+      .then(function (file) {
+
+        return res
+          .status(file ? 200 : 404)
+          .json(file);
+
+      });
 
   }
 
