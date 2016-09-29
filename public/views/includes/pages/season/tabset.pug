@@ -1,7 +1,15 @@
-uib-tabset(type="pills", active="1")
-  uib-tab(heading="Roster")
-    .row.roster-list
-      .col-md-3(ng-repeat="member in season.members")
-        member-nail(member="member")
-  uib-tab(heading="Events")
-    event-list(events="season.events")
+section
+  .tabs.tabs-style-flip
+    nav
+      ul
+        li(ui-sref-active='tab-current')
+          a(ui-sref='app.season.events')
+            i.fa-i.fa.fa-calendar-check-o
+            span Events
+        li(ui-sref-active='tab-current')
+          a(ui-sref='app.season.roster')
+            i.fa-i.fa.fa-group
+            span Roster
+    .content-wrap
+      section.content-current
+        .content-view(ui-view="")

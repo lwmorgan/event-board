@@ -140,6 +140,29 @@ module.exports = function(grunt) {
 
       }
 
+    },
+
+    ngconstant: {
+
+      options: {
+
+        dest: 'www/scripts/app.config.js',
+
+        name: 'eb.config',
+
+        constants: 'public/config/default.json'
+
+      },
+
+      pkg: {
+
+        constants: {
+
+          PACKAGE: grunt.file.readJSON('package.json')
+
+        }
+
+      }
 
     },
 
@@ -163,6 +186,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-wiredep');
+  grunt.loadNpmTasks('grunt-ng-constant');
 
   grunt.registerTask('default', [
 
@@ -178,7 +202,9 @@ module.exports = function(grunt) {
 
     'copy:images',
 
-    'copy:main'
+    'copy:main',
+
+    'ngconstant:pkg'
 
   ]);
 

@@ -102,6 +102,22 @@ angular.module('eb')
 
         })
 
+        .state('app.season.events', {
+
+            url: '/events',
+
+            templateUrl: 'views/pages/season/events.html'
+
+        })
+
+        .state('app.season.roster', {
+
+            url: '/roster',
+
+            templateUrl: 'views/pages/season/roster.html'
+
+        })
+
         .state('app.about', {
 
             url: '/about',

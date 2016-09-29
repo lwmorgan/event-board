@@ -1,0 +1,15 @@
+{
+
+  "FOOTER": {
+
+    "links": [
+
+      { "title": "Home", "route": "app.home" },
+
+      { "title": "About", "route": "app.about" }
+
+    ]
+
+  }
+
+}

@@ -1,0 +1,10 @@
+footer
+  ul.clearfix
+    li(ng-repeat="link in links")
+      a(ui-sref="{{link.route}}", ui-sref-active="active") {{ link.title }}
+  .build
+    p
+      | Build v
+      span {{version}}
+      //- span - {{codeName}}
+    //- img(ng-src="codeImage")

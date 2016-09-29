@@ -1,23 +1,35 @@
-nav.navbar.navbar-default(role='navigation')
-  .navbar-header
-    button.navbar-toggle(type='button', ng-init='navCollapsed = true', ng-click='navCollapsed = !navCollapsed')
-      span.sr-only Toggle navigation
-      span.icon-bar
-      span.icon-bar
-      span.icon-bar
-    a.navbar-brand(href='#') Test POC
-  .collapse.navbar-collapse(uib-collapse='navCollapsed')
-    ul.nav.navbar-nav
-      li(ui-sref-active='active')
-        a(href='#', ui-sref='app.home') {{group.activeSeason ? group.activeSeason.year + ' ' + group.activeSeason.name : ''}}
-      li.dropdown(uib-dropdown='', ui-sref-active='active')
-        a.dropdown-toggle(href='#', uib-dropdown-toggle='', data-toggle='dropdown')
-          | Seasons
-          b.caret
-        ul.dropdown-menu(role='menu')
-          li(ng-repeat='s in group.seasons')
-            a(href='#', ui-sref='app.season({ year: s.year, name: s.name })') {{s.year + ' ' +  s.name}}
-      li(ui-sref-active='active')
-        a(href='#', ui-sref='app.about') About
-
-div(ui-view="")
+.nav-container(style="position: relative;")
+  a.brand-logo(href='#', style="position: absolute; top: 0px; left: 0px; z-index: 100;")
+    img(src='http://localhost:8010/images/Titans_Logo.png', alt="Home")
+  nav.navbar.navbar-default(role='navigation')
+    .navbar-header
+      button.navbar-toggle(type='button', ng-init='navCollapsed = true', ng-click='navCollapsed = !navCollapsed')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      //- a.navbar-brand(href='#') Test POC
+      //- a.navbar-brand(href='#')
+      //-   img(src='http://localhost:8010/images/Titans_Logo.png')
+    .collapse.navbar-collapse(uib-collapse='navCollapsed', style="margin-left: 40px; font-family: 'Cabin', Helvetica, Arial, sans-serif; font-size: 18px;")
+      .active-season.nav-one(ui-sref-active='active')
+        a(href='#', ui-sref='app.home')
+          i.fa-i.fa.fa-home
+          span(style="margin-left: 5px;") {{group.activeSeason ? group.activeSeason.year + ' ' + group.activeSeason.name : ''}}
+      ul.nav.navbar-nav.navbar-right
+        //- li.nav-right-two.dropdown(uib-dropdown='', ui-sref-active='active', ng-class="{active:$state.includes('season') && ($state.includes('events') || $state.includes('roster'))}")
+        li.nav-right-two.dropdown(uib-dropdown='', ng-class="{ active: $state.includes('app.season') }")
+          a.dropdown-toggle(href='#', uib-dropdown-toggle='', data-toggle='dropdown')
+            i.fa-i.fa.fa-calendar
+            span(style="margin-left: 5px;") Seasons
+            b.caret
+          ul.dropdown-menu(role='menu')
+            li(ng-repeat='s in group.seasons')
+              a(href='#', ui-sref='app.season.events({ year: s.year, name: s.name })') {{s.year + ' ' +  s.name}}
+        li.nav-right-one(ui-sref-active='active')
+          a(href='#', ui-sref='app.about')
+            i.fa-i.fa.fa-info-circle
+            span(style="margin-left: 5px;") About
+        //- hr
+div.main(ui-view="")
+eb-footer

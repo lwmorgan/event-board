@@ -2,11 +2,13 @@
 
 angular.module('eb')
 
-  .controller('AppCtrl', ['$scope', 'group', function ($scope, group) {
+  .controller('AppCtrl', ['$scope', '$state', 'group', function ($scope, $state, group) {
 
       angular.extend($scope, {
 
-        'group': group
+        'group': group,
+
+        '$state': $state
 
       });
 
